@@ -1,10 +1,10 @@
-/*
-  У вас є функція merge, яка поєднує два об'єкти. 
-  Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
-*/
-
-function merge (objA, objB) {
-  return Object.assign(objA, objB);
+function merge(
+  objA: Record<string, any>,
+  objB: Record<string, any>
+): Record<string, any> {
+  return Object.assign({}, objA, objB);
 }
 
-export {}
+const mergedObject = merge({ name: "John" }, { age: 30 });
+
+console.log(mergedObject);
